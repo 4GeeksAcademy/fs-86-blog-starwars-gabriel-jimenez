@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background-image: url('https://www.shutterstock.com/image-illustration/abstract-background-star-warp-hyperspace-260nw-1035076279.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(236, 213, 41);
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .intro-container {
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    opacity: 0;
+    animation: introAnimation 10s forwards;
+    transition: opacity 1s;
+    padding: 50px;
+  }
+
+  @keyframes introAnimation {
+    0% {
+      top: 100%;
+      opacity: 0;
+    }
+    50% {
+      top: 50%;
+      opacity: 0.8;
+    }
+    100% {
+      top: 10%;
+      opacity: 1;
+    }
+  }
+  .intro-container h1 {
+    font-size: 3rem;
+    margin: 0;
+    transform: rotateX(20deg);
+  }
+
+  .intro-container p {
+    font-size: 1.5rem;
+    transform: rotateX(20deg);
+  }

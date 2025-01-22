@@ -1,14 +1,18 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useActionState, useContext, useEffect } from "react";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
+import StarWarsHome from "./component/starWarsHome";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-
+import { Context } from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import Characters from "./views/character";
+import Planets from "./views/planets";
+import Vehicles from "./views/vehicles";
+
 
 //create your first component
 const Layout = () => {
@@ -22,12 +26,15 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
+						{/* <Route path="/demo" element={<Demo />} />
+						<Route path="/single/:theid" element={<Single />} /> */}
+						<Route path="/" element={<StarWarsHome />} />
+						<Route path="/character/:id" element={<Characters />} />
+						<Route path="/planet/:id" element={<Planets />} />
+						<Route path="/vehicle/:id" element={<Vehicles />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
-					<Footer />
+					{/* <Footer /> */}
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
